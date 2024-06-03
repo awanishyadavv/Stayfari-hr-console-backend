@@ -9,7 +9,7 @@ export const loadAccess = async (req, res, next) => {
         res.status(200).json({
             success:true,
             access:user.access,
-            message:"Data loaded Succcessfully"
+            message:"Access loaded Succcessfully"
         })
     } catch (error) {
         next(error)
@@ -53,7 +53,7 @@ export const loadData = async (req, res, next) => {
         res.status(200).json({
             success: true,
             data,
-            message: "AccessDataRange loaded successfully"
+            message: "Data loaded successfully"
         });
     } catch (error) {
         next(error);
