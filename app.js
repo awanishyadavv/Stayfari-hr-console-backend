@@ -24,7 +24,7 @@ config({
     path:"./data/config.env",
 });
 
-const allowedOrigins = [process.env.FRONTEND_URL,process.envEXTENSION_URL_1,process.env.EXTENSION_URL_2,process.env.EXTENSION_URL_3,process.env.EXTENSION_URL_4];
+const allowedOrigins = [process.env.FRONTEND_URL,process.env.FRONTEND_URL_2,process.env.EXTENSION_URL_1,process.env.EXTENSION_URL_2,process.env.EXTENSION_URL_3,process.env.EXTENSION_URL_4];
 // middleware
 app.use(express.json());
 app.use(cookieParser());
