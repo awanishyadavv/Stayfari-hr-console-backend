@@ -2,10 +2,7 @@ import express, { Router } from "express";
 
 // User Router import
 import userRouter from "./routes/user.js"
-import dataRouter from "./routes/data.js"
-import accessRouter from "./routes/userAccess.js"
-import profilingRouter from "./routes/profiling.js"
-import externsionRouter from "./routes/extension.js"
+import humanResource from "./routes/hr/humanResource.js"
 
 
 
@@ -27,7 +24,7 @@ config({
     path:"./data/config.env",
 });
 
-const allowedOrigins = [process.env.FRONTEND_URL, 'chrome-extension://jjpngjggicplaohkofkohinignkgicel'];
+const allowedOrigins = [process.env.FRONTEND_URL,process.envEXTENSION_URL_1,process.env.EXTENSION_URL_2,process.env.EXTENSION_URL_3,process.env.EXTENSION_URL_4];
 // middleware
 app.use(express.json());
 app.use(cookieParser());
@@ -47,10 +44,8 @@ app.use(cors({
 
 // Using Routes by Importing Router
 app.use("/api/v1/users", userRouter);
-app.use("/api/v1/data", dataRouter);
-app.use("/api/v1/access", accessRouter);
-app.use("/api/v1/profiling", profilingRouter);
-app.use("/api/v1/extension", externsionRouter);
+app.use("/api/v1/hr", humanResource);
+
 
 
 
